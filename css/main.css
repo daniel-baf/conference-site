@@ -105,14 +105,30 @@ html {
   box-sizing: inherit
 }
 
+/** UTILITIES **/
+
+nav.no-decoration a {
+  text-decoration: none;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 110rem;
+}
+
+@media (min-width: 480px) {
+  .container {
+    width: 90%;
+  }
+}
+
 /** GLOBAL **/
 
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f2f2f2;
 }
-
-/**GLOBAL**/
 
 h1 {
   font-size: 4.8rem;
@@ -184,6 +200,7 @@ div.event-info p {
   margin-right: 3rem;
   text-transform: uppercase;
 }
+
 div.event-info p:last-of-type {
   margin-right: 0;
 }
@@ -197,28 +214,115 @@ div.event-info p i {
   p.date {
     float: left;
   }
-  div.event-info p{
+  div.event-info p {
     margin-right: 0rem;
   }
   p.city {
     float: right;
-  }  
+  }
 }
+
 h1.site-name {
   font-size: 5.9vw;
   text-transform: uppercase;
   font-family: 'PT Sans', sans-serif;
 }
+
 @media (min-width: 768px) {
   h1.site-name {
     font-size: 11.5vw;
   }
 }
+
 p.slogan {
   text-transform: none!important;
 }
-p.slogan span{
+
+p.slogan span {
   font-weight: 700;
+}
+
+/** MAIN BAR **/
+
+div.bar {
+  background-color: #353535;
+  padding: 2rem 0;
+}
+
+div.logo {
+  float: left;
+  width: 80%;
+}
+
+div.logo img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  div.logo {
+    width: 40%;
+  }
+}
+
+/** MAIN NAVIGATION **/
+
+nav.main-navigation {
+  margin-top: 1rem;
+  display: none;
+}
+
+
+nav.main-navigation a {
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  display: block;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  text-align: center;
+}
+
+nav.main-navigation a:hover {
+  cursor: pointer;
+  background-color: #fe4918;
+}
+nav.main-navigation a:last-child {
+  border: 0.2rem solid #fe4918;
+}
+@media (min-width: 768px) {
+  nav.main-navigation {
+    float: right;
+    width: 60%;
+    display: block;
+    text-align: end;
+  }
+  nav.main-navigation a {
+    display: inline;
+  }
+}
+
+/** MENU MOBILE **/
+div.mobile-menu {
+  width: 6rem;
+  display: block;
+  float: right;
+  margin-top: 1.2rem;
+}
+div.mobile-menu:hover {
+  cursor: pointer;
+}
+div.mobile-menu span {
+  height: .8rem;
+  margin-bottom: .6rem;
+  background-color: white;
+  display: block;
+}
+@media (min-width: 768px) {
+  div.mobile-menu span {
+    display: none;
+  }
 }
 
 /* ==========================================================================
@@ -300,20 +404,6 @@ p.slogan span{
 
 .clearfix:after {
   clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
