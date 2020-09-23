@@ -189,6 +189,7 @@ div.event-info p:last-of-type {
 }
 
 div.event-info p i {
+  font-size: 3rem;
   color: #fe4918;
 }
 
