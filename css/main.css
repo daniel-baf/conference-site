@@ -693,7 +693,8 @@ div.price-table h3 {
   font-family   : 'Oswald', sans-serif;
 }
 
-div.price-table p.number {
+div.price-table p.number 
+{
   color     : #000000;
   margin-top: 2rem;
 }
@@ -721,6 +722,7 @@ div.testimonial {
 
 footer.testimonial-info {
   padding: 0;
+  background-color: transparent;
 }
 
 footer.testimonial-info img {
