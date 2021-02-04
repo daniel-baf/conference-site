@@ -179,7 +179,11 @@ h3 {
 }
 
 h4 {
-  font-size: 2.8rem;
+  text-align    : center;
+  text-transform: uppercase;
+  border-bottom : 0.2rem solid var(--orange-color);
+  font-size     : 2.8rem;
+  padding-bottom: 1rem;
 }
 
 ul {
@@ -413,6 +417,7 @@ nav.main-navigation a:last-child {
 }
 
 /** MENU MOBILE **/
+
 div.mobile-menu {
   width     : 6rem;
   display   : block;
@@ -438,6 +443,7 @@ div.mobile-menu span {
 }
 
 /** WORKSHOPS **/
+
 section.program {
   position: relative;
 }
@@ -446,7 +452,6 @@ div.video-container {
   max-width : 100%;
   overflow-x: hidden;
   /** No get on borderd **/
-
 }
 
 div.program-container {
@@ -511,6 +516,7 @@ div.about-event p i {
 }
 
 /* COURSE INFO */
+
 div.about-event {
   margin-top   : 0.5rem;
   border-bottom: 0.2rem solid #000;
@@ -527,6 +533,7 @@ div.about-event p {
 }
 
 /* GUESSES */
+
 ul.guest-list li {
   padding: 2rem;
   float  : left;
@@ -582,6 +589,7 @@ div.guest:hover p {
 }
 
 /* COUNTER */
+
 .parallax {
   align-items: center;
 }
@@ -646,12 +654,14 @@ p.number {
 }
 
 /* MAP */
+
 div.map {
   height          : 45rem;
   background-color: greenyellow;
 }
 
 /* PRICES LIST */
+
 ul.price-list>li {
   /* uses > to say, just the first li */
   padding: 1rem;
@@ -693,8 +703,7 @@ div.price-table h3 {
   font-family   : 'Oswald', sans-serif;
 }
 
-div.price-table p.number 
-{
+div.price-table p.number {
   color     : #000000;
   margin-top: 2rem;
 }
@@ -705,6 +714,7 @@ div.price-table ul li i {
 }
 
 /** TESTIMONIALS **/
+
 div.testimonials {
   padding-bottom: 2rem;
 }
@@ -721,7 +731,7 @@ div.testimonial {
 }
 
 footer.testimonial-info {
-  padding: 0;
+  padding         : 0;
   background-color: transparent;
 }
 
@@ -752,6 +762,7 @@ footer.testimonial-info cite span {
 }
 
 /** NEWS LETTER **/
+
 div.newsletter {
   position: relative;
   height  : auto;
@@ -783,6 +794,7 @@ div.newsletter .content h3 {
 }
 
 /** REGRESIVE COUNT **/
+
 div.regresive-count ul {
   text-transform: uppercase;
   font-family   : 'Oswald', sans-serif;
@@ -844,23 +856,133 @@ p.copyrigth {
   padding         : 1rem;
   color           : #ffffff;
   text-align      : center;
-  margin: 0;
-  margin-top: 1rem;
+  margin          : 0;
+  margin-top      : 1rem;
 }
 
-/* ==========================================================================
+/* INTERNAL */
+
+/* Regist */
+
+form.regist h3 {
+  text-align    : center;
+  text-transform: uppercase;
+  margin        : 2rem 0 0 0;
+}
+
+form.regist label {
+  margin-bottom: 0.5rem;
+  font-weight  : bold;
+}
+
+div.box {
+  background-color: white;
+  border          : 0.2rem solid var(--gray-color);
+  padding         : 1rem;
+  margin          : 1rem;
+}
+
+div.camp {
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  div.camp {
+    float: left;
+    width: 33.33%
+  }
+}
+
+div.packages .price-table:hover {
+  transform : none;
+  box-shadow: none;
+}
+
+div.packages .price-table input {
+  clear     : both;
+  width     : 40%;
+  margin    : 1rem auto 0 auto;
+  display   : block;
+  text-align: center;
+}
+
+.contenido-dia {
+  padding   : 2.7rem;
+  /* display: none */
+}
+
+@media (min-width: 768px) {
+  .contenido-dia>div {
+    float: left;
+    width: 33.3%;
+  }
+}
+
+.contenido-dia>div p {
+  text-align: left;
+}
+
+.contenido-dia>div label {
+  display      : block;
+  margin-bottom: 1rem;
+}
+
+.contenido-dia>div input {
+  margin-right: 1rem;
+  padding     : 4rem;
+}
+
+.contenido-dia>div label time {
+  color: var(--orange-color);
+}
+
+/* regist summary */
+
+div.summary p {
+  font-size     : 2rem;
+  text-transform: uppercase;
+}
+
+div.summary div.extras {
+  float  : left;
+  width  : 50%;
+  padding: 3rem;
+}
+
+div.summary div.extras div.order{
+  text-align: left;
+  margin-bottom: 1rem;
+  
+}
+
+div.summary div.extras input {
+  margin: 1rem 0 0 0;
+}
+
+div.summary div.total {
+  float: right;
+  width: 50%;
+  padding: 3rem;
+}
+
+div.summary input{
+display: block;
+margin: 1rem auto;
+}
+
+  /* ==========================================================================
    Helper classes
    ========================================================================== */
 
-/*
+  /*
  * Hide visually and from screen readers
  */
 
-.hidden {
-  display: none !important;
-}
+  .hidden {
+    display: none !important;
+  }
 
-/*
+  /*
 * Hide only visually, but have it available for screen readers:
 * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 *
@@ -869,45 +991,45 @@ p.copyrigth {
 *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
 */
 
-.sr-only {
-  border     : 0;
-  clip       : rect(0, 0, 0, 0);
-  height     : 1px;
-  margin     : -1px;
-  overflow   : hidden;
-  padding    : 0;
-  position   : absolute;
-  white-space: nowrap;
-  width      : 1px;
-  /* 1 */
-}
+  .sr-only {
+    border     : 0;
+    clip       : rect(0, 0, 0, 0);
+    height     : 1px;
+    margin     : -1px;
+    overflow   : hidden;
+    padding    : 0;
+    position   : absolute;
+    white-space: nowrap;
+    width      : 1px;
+    /* 1 */
+  }
 
-/*
+  /*
 * Extends the .sr-only class to allow the element
 * to be focusable when navigated to via the keyboard:
 * https://www.drupal.org/node/897638
 */
 
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip       : auto;
-  height     : auto;
-  margin     : 0;
-  overflow   : visible;
-  position   : static;
-  white-space: inherit;
-  width      : auto;
-}
+  .sr-only.focusable:active,
+  .sr-only.focusable:focus {
+    clip       : auto;
+    height     : auto;
+    margin     : 0;
+    overflow   : visible;
+    position   : static;
+    white-space: inherit;
+    width      : auto;
+  }
 
-/*
+  /*
 * Hide visually and from screen readers, but maintain layout
 */
 
-.invisible {
-  visibility: hidden;
-}
+  .invisible {
+    visibility: hidden;
+  }
 
-/*
+  /*
 * Clearfix: contain floats
 *
 * For modern browsers
@@ -919,90 +1041,90 @@ p.copyrigth {
 *    `:before` to contain the top-margins of child elements.
 */
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
+  .clearfix:before,
+  .clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+  }
 
-.clearfix:after {
-  clear: both;
-}
+  .clearfix:after {
+    clear: both;
+  }
 
-/* ==========================================================================
+  /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-@media print {
+  @media print {
 
-  *,
-  *:before,
-  *:after {
-    background : transparent !important;
-    color      : #000 !important;
-    /* Black prints faster */
-    box-shadow : none !important;
-    text-shadow: none !important;
-  }
+    *,
+    *:before,
+    *:after {
+      background : transparent !important;
+      color      : #000 !important;
+      /* Black prints faster */
+      box-shadow : none !important;
+      text-shadow: none !important;
+    }
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
 
-  a[href]:after {
-    content: " ("attr(href) ")";
-  }
+    a[href]:after {
+      content: " ("attr(href) ")";
+    }
 
-  abbr[title]:after {
-    content: " ("attr(title) ")";
-  }
+    abbr[title]:after {
+      content: " ("attr(title) ")";
+    }
 
-  /*
+    /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+      content: "";
+    }
 
-  pre {
-    white-space: pre-wrap !important;
-  }
+    pre {
+      white-space: pre-wrap !important;
+    }
 
-  pre,
-  blockquote {
-    border           : 1px solid #999;
-    page-break-inside: avoid;
-  }
+    pre,
+    blockquote {
+      border           : 1px solid #999;
+      page-break-inside: avoid;
+    }
 
-  /*
+    /*
   * Printing Tables:
   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
   */
-  thead {
-    display: table-header-group;
-  }
+    thead {
+      display: table-header-group;
+    }
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows : 3;
-  }
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows : 3;
+    }
 
-  h2,
-  h3 {
-    page-break-after: avoid;
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
   }
-}
