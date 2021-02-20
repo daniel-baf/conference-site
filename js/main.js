@@ -9,11 +9,25 @@
     tshirtDiscount = 0.07, //means 7,
     totalAmounts;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM loaded"); //DOM loades, can start to innerHTML
+  document.addEventListener("DOMContentLoaded", function () { //DOM LOADES
+
+    // map https://leafletjs.com/
+    var map = L.map("map").setView([14.968024, -91.773782], 16  );
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    L.marker([14.968024, -91.773782])
+      .addTo(map)
+      .bindPopup("GDLWebCamps <br> Boletos disponibles")
+      .openPopup()
+      .bindTooltip("Hola :D")
+      .openTooltip();
 
     // what the people takes
-    let gift = document.getElementById("gift");
+    let gift = document.getElementById("gift"); 
     // user info
     let name = document.getElementById("name"), // BUG show nothing when i get this id
       second_name = document.getElementById("second_name"),
