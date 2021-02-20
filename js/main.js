@@ -78,6 +78,7 @@
         }
 
         ammount.innerHTML = "Q " + totalAmounts.toFixed(2);
+        console.log(totalAmounts);
       }
     }
 
