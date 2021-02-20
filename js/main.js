@@ -7,8 +7,7 @@
     tshirtPrice = 10,
     fullPassPrice = 80,
     tshirtDiscount = 0.07, //means 7,
-    totalAmounts,
-    products = [];
+    totalAmounts;
 
   document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM loaded"); //DOM loades, can start to innerHTML
@@ -16,27 +15,38 @@
     // what the people takes
     let gift = document.getElementById("gift");
     // user info
-    let name = document.getElementById("name"); // BUG show nothing when i get this id
-    let second_name = document.getElementById("second_name");
-    let email = document.getElementById("email");
+    let name = document.getElementById("name"), // BUG show nothing when i get this id
+      second_name = document.getElementById("second_name"),
+      email = document.getElementById("email");
     //campos pases
-    let dayPass = document.getElementById("dayPass"); //work
-    let twoDaysPass = document.getElementById("twoDaysPass");
-    let fullPass = document.getElementById("fullPass");
+    let dayPass = document.getElementById("dayPass"), //work
+      twoDaysPass = document.getElementById("twoDaysPass"),
+      fullPass = document.getElementById("fullPass");
     //buttons
-    let divError = document.getElementById("error");
-    let registBtn = document.getElementById("registBtn");
-    let result = document.getElementById("products_list");
-    let calc = document.getElementById("calc_amount");
+    let divError = document.getElementById("error"),
+      registBtn = document.getElementById("registBtn"),
+      calc = document.getElementById("calc_amount");
     // extras
-    let labels = document.getElementById("label");
-    let tShirts = document.getElementById("event_tshirt");
+    let labels = document.getElementById("label"),
+      tShirts = document.getElementById("event_tshirt");
+    // summary
+    let result = document.getElementById("products_list"),
+      ammount = document.getElementById("total_ammout");
 
     //EVENTS
     calc.addEventListener("click", calculateAmounts);
+    dayPass.addEventListener("blur", showDaysDiv); // use blur when i have a select option
+    fullPass.addEventListener("blur", showDaysDiv);
+    twoDaysPass.addEventListener("blur", showDaysDiv);
+    // validate camps
+    name.addEventListener("blur", validateCamps);
+    second_name.addEventListener("blur", validateCamps);
+    email.addEventListener("blur", validateCamps);
+    email.addEventListener("blur", validateEmail);
 
     // FUNCTIONS
     function calculateAmounts(event) {
+      let products = [];
       event.preventDefault(); //TODO deleate this line and program the JSP
       if (gift.value === "") {
         //gift necessary
@@ -59,12 +69,56 @@
         if (parseInt(tShirts.value, 10 || 0) > 0)
           products.push(tShirts.value + " Camisas");
         if (parseInt(labels.value, 10 || 0) > 0)
-          products.push(labels.value + " Camisas");
+          products.push(labels.value + " Etiquetas");
 
-        console.log(products);
+        result.style.display = "block";
+        result.innerHTML = "";
+        for (let i = 0; i < products.length; i++) {
+          result.innerHTML += products[i] + "<br/>";
+        }
+
+        ammount.innerHTML = "Q " + totalAmounts.toFixed(2);
       }
     }
 
-    // FUNCTIONS
+    function showDaysDiv() {
+      let selectedDays = [];
+      if (parseInt(dayPass.value, 10 || 0) > 0) {
+        selectedDays.push("viernes");
+      }
+      if (parseInt(twoDaysPass.value, 10 || 0) > 0) {
+        selectedDays.push("viernes", "sabado");
+      }
+      if (parseInt(fullPass.value, 10 || 0) > 0) {
+        selectedDays.push("viernes", "sabado", "domingo");
+      }
+      for (let i = 0; i < selectedDays.length; i++) {
+        document.getElementById(selectedDays[i]).style.display = "block";
+      }
+    }
+
+    function validateCamps() {
+      if (this.value == "") {
+        divError.innerHTML = "Este campo es obligatorio"; //show the text
+        divError.style.display = "block"; //show the div
+        this.focus();
+        this.style.border = "1px solid red"; //change border color
+      } else {
+        divError.style.display = "none";
+        this.style.border = "1px solid #cccccc";
+        this.style.padding = "0.5rem";
+      }
+    }
+
+    function validateEmail() {
+      if (this.value.indexOf("@") > -1) {
+        this.style.border = "1px solid #cccccc";
+      } else {
+        this.style.border = "1px solid red";
+        divError.style.display = "block";
+        divError.style.border = "1px solid red";
+        divError.innerHTML = "Debe contener almenos un @";
+      }
+    }
   }); //DOM CONTENT LOADED
 })();
